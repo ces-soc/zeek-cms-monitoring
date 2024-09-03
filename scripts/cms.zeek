@@ -129,11 +129,14 @@ function parse_post_body(post_body: string) : table[string] of string
 
 function get_cookie_values(s: set[string]): table[string] of string
 {
+
+    local key_values: table[string] of string;
+    
     for(element in s)
     {
         local elements: string_vec;
         local attrs: string_vec;
-        local key_values: table[string] of string;
+        // local key_values: table[string] of string;
         elements = split_string(element, /;/);
         for(idx in elements)
         {
