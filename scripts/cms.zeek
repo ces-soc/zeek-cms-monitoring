@@ -131,18 +131,18 @@ function get_cookie_values(s: set[string]): table[string] of string
 {
 
     local key_values: table[string] of string;
-    
+
     for(element in s)
     {
         local elements: string_vec;
         local attrs: string_vec;
-        // local key_values: table[string] of string;
+        # local key_values: table[string] of string;
         elements = split_string(element, /;/);
         for(idx in elements)
         {
             # print(strip(elements[idx]));
             attrs = split_string(strip(elements[idx]), /=/);
-            #print(attrs);
+            # print(attrs);
             key_values[attrs[0]] = 1 in attrs ? attrs[1] : "";
         }
     }
